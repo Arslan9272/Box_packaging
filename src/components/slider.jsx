@@ -61,7 +61,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 // Your images
-import slide_image_1 from "../assets/images/images1.jpeg";
+import slide_image_1 from "../assets/images/image1.jpg";
 import slide_image_2 from "../assets/images/img2.jpeg";
 import slide_image_3 from "../assets/images/img3.jpeg";
 import slide_image_4 from "../assets/images/img4.jpeg";
