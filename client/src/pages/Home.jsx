@@ -5,7 +5,10 @@ function Home() {
     <div>
       <Layout>
 
-        <h1>Hello</h1>
+      <div className="bg-blue-500 text-white p-4">
+  This is a Tailwind styled div.
+</div>
+
       </Layout>
     </div>
   )
