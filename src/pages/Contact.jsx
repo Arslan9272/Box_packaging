@@ -3,6 +3,7 @@ import Layout from "../reusableLayouts/layout"; // make sure this path is correc
 import Input from "../components/ui/input";
 import Button from "../components/ui/button";
 import Textarea from "../components/ui/textArea";
+import CardSlider from "../components/cardSlider";
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -41,6 +42,7 @@ const ContactUs = () => {
   };
 
   return (
+    <div>
       <div className="w-full px-4 py-10 grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
         {/* LEFT SECTION */}
         <div className="space-y-6">
@@ -127,6 +129,9 @@ const ContactUs = () => {
             </Button>
           </form>
         </div>
+      </div>
+
+      <CardSlider/>
       </div>
   );
 }

@@ -80,6 +80,18 @@ button:focus-visible {
   overflow-x: hidden;
   overflow-y: auto;
 }
+
+@keyframes scrollCards {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* Adjust this to scroll the entire length of the cards */
+  }
+}
+
+
+
 /* @tailwind base;
 @tailwind components;
 @tailwind utilities; */

@@ -39,7 +39,7 @@ const Navbar = () => {
 
       {/* Main Navigation Bar (sticks on scroll) */}
       <div className={`w-full ${isSticky ? 'fixed top-0 left-0 z-50 shadow-md' : 'relative'} transition-all duration-300`}>
-        <div className="bg-gray-800 text-white px-4 py-2 flex justify-between items-center">
+        <div className="bg-beige text-white px-4 py-2 flex justify-between items-center">
           {/* Nav Items Left */}
           <div className="flex gap-6 font-semibold text-sm">
             <Link to="/" className="hover:text-yellow-400">Home</Link>

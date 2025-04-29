@@ -3,7 +3,7 @@ import Input from "./ui/input";
 import Button from "./ui/button";
 import CustomSelect from "./ui/customSelect";
 import CustomTextarea from "./ui/customTextArea";
-import SideImage from "../assets/images/side_image.jpg";
+import SideImage from "../assets/images/pic.png";
 
 const CustomQuoteForm = () => {
   return (
