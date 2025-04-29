@@ -1,12 +1,18 @@
-import { useState } from 'react'
-import './App.css'
-import Home from './pages/Home'
 
-function App() {
+import './App.css'
+import { Toaster } from 'react-hot-toast';
+import AppRouter from "./routers";
+import Layout from './reusableLayouts/layout';
+
+const App = () => {
 
   return (
-    <> <Home /> </>
-  
+    <>
+    <Toaster position="top-right" reverseOrder={false} />
+    <Layout>
+    <AppRouter />
+    </Layout>
+  </>
   )
 }
 

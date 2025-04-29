@@ -1,17 +1,22 @@
-import React from 'react'
-import Navbar from './navbar'
-import Footer from './footer'
+import React from 'react';
+import Navbar from './navbar';
+import Footer from './footer';
 
-function layout({children}) {
+const Layout = ({ children }) => {
   return (
-    <div>
+    <div className="w-full min-h-screen flex flex-col">
+      {/* Navbar OUTSIDE any container */}
       <Navbar />
-        <div className='container'>
-            {children}
-        </div>
-        <Footer />
+
+      {/* Page Content */}
+      <main className="flex-grow">
+        {children}
+      </main>
+
+      {/* Footer */}
+      <Footer />
     </div>
-  )
+  );
 }
 
-export default layout;
+export default Layout;
