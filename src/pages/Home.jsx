@@ -1,22 +1,3 @@
-<<<<<<< HEAD
-import React from 'react'
-import Layout from '../reusableLayouts/layout'
-function Home() {
-  return (
-    <div>
-      <Layout>
-
-      <div className="bg-blue-500 text-white p-4">
-  This is a Tailwind styled div.
-</div>
-
-      </Layout>
-    </div>
-  )
-}
-
-export default Home
-=======
 import React from 'react';
 import Slider from '../components/slider';
 import CustomQuoteForm from '../components/quote';
@@ -116,4 +97,3 @@ const Home = () => {
 };
 
 export default Home;
->>>>>>> ceb395b3cd46edc759e8969f2920ca982e4601b7
