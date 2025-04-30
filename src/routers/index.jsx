@@ -16,11 +16,8 @@ const AppRouter = ()  =>{
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/quote" element={<CustomQuoteForm />} />
             <Route path="/product/:title" element={<ProductDetail />} />
-            <Route path='/contactus' element={<ContactUs />} />
-            <Route path='/about-us' element={<AboutUs />} />
         </Routes>
     </div>
   )
 }
-
 export default AppRouter
