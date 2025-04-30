@@ -6,7 +6,7 @@ import ParallaxSection from '../components/parallexSection';
 import newParallaxBg from '../assets/images/backqa.jpg';
 import newParallaxBg1 from '../assets/images/image.png';
 import CardSlider from '../components/cardSlider';
-
+import SideImage from "../assets/images/pic.png";
 const Home = () => {
   const whyChooseUsItems = [
     {
@@ -38,10 +38,28 @@ const Home = () => {
         title="WHY CHOOSE US"
         items={whyChooseUsItems}
       />
-      <CustomQuoteForm />
+        <div className="w-full bg-[#f9f9e5] min-h-screen px-6 py-10">
+      {/* Flex row layout with 70/30 split */}
+      <div className="flex flex-row gap-8 max-w-screen-xl mx-auto ">
+        <div className="bg-white p-6 rounded-lg shadow-md w-[70%] space-y-4">
+        {/* Form - 70% */}
+        <CustomQuoteForm /> 
+        </div>
+
+        {/* Image - 30% */}
+        <div className="w-[30%] flex justify-center items-start">
+          <img
+            src={SideImage}
+            alt="Custom Quote"
+            className="w-full h-auto object-cover rounded-lg"
+          />
+        </div>
+      </div>
+    </div>
+      
 
 
-      {/* Text Section */}
+       {/* Text Section */}
       <section className="px-4 py-12 max-w-6xl mx-auto text-gray-800">
         <h2 className="text-3xl font-extrabold mb-4">
           Get Custom Boxes with Logo for Every Product at Wholesale Prices
