@@ -2,18 +2,27 @@ import React from "react";
 import { useParams, useLocation } from "react-router-dom";
 import productData from "../data/productList";
 import ImageGallery from "../components/ui/imageGallery";
+
 import CustomQuoteForm from "../components/quote";
-
 const ProductDetail = () => {
-  const { title } = useParams();
+  const { productId } = useParams();
   const location = useLocation();
-  const decodedTitle = decodeURIComponent(title);
+  const decodedTitle = decodeURIComponent(productId);
 
-  const product = productData.find((p) => p.title === decodedTitle);
-  if (!product) return <div className="p-8 text-red-600">Product not found</div>;
+  // Try to get product from navigation state
+  const passedProduct = location.state?.product;
 
-  const initialImageSrc = location.state?.imageSrc;
+  const product =
+    passedProduct || productData.find((p) => p.title === decodedTitle);
 
+  if (!product) {
+    console.warn("Product not found for title:", decodedTitle);
+    return <div className="p-8 text-red-600">Product not found</div>;
+  }
+
+  const initialImageSrc = location.state?.imageSrc || product.imageSrc; // Default image if no state is passed
+
+  // Map the images to the required format
   const images = product.images.map((img, index) => ({
     id: index + 1,
     src: img,

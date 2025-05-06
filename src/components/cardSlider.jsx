@@ -13,7 +13,6 @@ const CardSlider = () => {
       state: { imageSrc },
     });
   };
-  
 
   useEffect(() => {
     const slider = sliderRef.current;
