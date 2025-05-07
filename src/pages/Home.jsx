@@ -109,7 +109,7 @@ const Home = () => {
       </div>
     </div>
 
-      <CardSlider />
+      {/* <CardSlider /> */}
     </>
   );
 };
