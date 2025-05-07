@@ -1,59 +1,55 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { cardAnimations } from "../config.js/motion"; // Adjust the path if needed
+import { cardAnimations } from "../config/motion";
+import box from "../assets/images/bg_box.png";
+import paperBox from "../assets/images/bg_paperbox.png";
+import paperbag from "../assets/images/bg_paperbag.png";
+import giftbox from "../assets/images/bg_giftbox.png";
+import anticollision from "../assets/images/anticollisionbox.png";
+import custombox from "../assets/images/custome.png";
 
 const categories = [
   {
-    image: "/images/carton.png",
+    image: box,
     title: "CARTON",
     items: [
       "Anticollision paper pallet",
       "Folded color box",
-      "Aircraft box",
       "Handheld color box",
     ],
   },
   {
-    image: "/images/paper-box.png",
+    image: paperBox,
     title: "PAPER BOX",
-    items: [
-      "Hanging paper box",
-      "Bottom cross paper box",
-      "Visible paper box",
-      "Double Insert paper Box",
-    ],
+    items: ["Hanging paper box", "Bottom cross paper box", "Visible paper box"],
   },
   {
-    image: "/images/paper-bag.png",
+    image: paperbag,
     title: "PAPER BAG",
     items: ["Color paper bag", "Kraft paper bag"],
   },
   {
-    image: "/images/gift-box.png",
+    image: giftbox,
     title: "GIFT BOX",
     items: [
-      "Drawer precision mounting box",
-      "Split precision mounting box",
-      "Multi layer display precision box",
+      "Drawer-style mounting box",
+      "Split-lid mounting box",
+      "Multi-layer display box",
     ],
   },
   {
-    image: "/images/anticollision.png",
+    image: anticollision,
     title: "ANTICOLLISION PRODUCT",
     items: [
       "Anticollision paperboard",
       "Anticollision paper corners",
-      "Anticollision transit box",
       "Anticollision paper pallet",
     ],
   },
   {
-    image: "/images/custom.png",
+    image: custombox,
     title: "CUSTOMIZED SERVICES",
-    items: [
-      "Special process customization",
-      "Small batch customer orders",
-    ],
+    items: ["Special process customization", "Small batch customer orders"],
   },
 ];
 
@@ -67,16 +63,11 @@ const ProductCategories = () => {
           Custom Packaging Solutions for Every Product and Purpose
         </h2>
         <p className="text-gray-700 mb-3">
-          Every product is unique—and its packaging should reflect that.
-          Whether you need durable protection, premium presentation, or
-          eco-friendly appeal, our custom boxes are tailored to meet every
-          design, shape, and industry requirement.
+          Every product is unique—and its packaging should reflect that. Whether
+          you need durable protection, premium presentation, or eco-friendly
+          appeal, our custom boxes are tailored to meet every design, shape, and
+          industry requirement.
         </p>
-        {/* <p className="text-gray-700">
-          From minimalist kraft options to upscale rigid boxes and standout
-          die-cut designs, we create packaging that does more than hold your
-          product—it protects, enhances, and amplifies your brand.
-        </p> */}
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-7xl mx-auto">
@@ -91,31 +82,33 @@ const ProductCategories = () => {
               key={index}
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
-              className="relative flex items-start bg-white/60 backdrop-blur-lg p-6 shadow-xl border border-gray-200 w-full h-[200px]"
+              className="relative flex items-start bg-white/60 backdrop-blur-lg p-4 shadow-xl border border-gray-200 rounded-xl h-auto"
               variants={animation}
               initial="0%"
               animate="100%"
               transition={{ duration: 0.4 }}
             >
-              <div className="absolute top-[-25px] left-6">
-                <div className="w-24 h-24 bg-white rounded-2xl shadow-md flex items-center justify-center border-2 border-gray-100">
+              {/* Image on the left with some part overflowing top */}
+              <div className="relative flex-shrink-0 w-24 h-24 mr-4">
+                <div className="absolute top-[-55px] object-cover left-0 w-28 h-28">
                   <img
                     src={category.image}
                     alt={category.title}
-                    className="w-20 h-20 object-contain"
+                    className="w-full h-full object-contain"
                   />
                 </div>
               </div>
 
-              <div className="pl-32">
-                <h3 className="text-xl font-bold text-gray-800 mb-4">
+              {/* Text content on the right */}
+              <div className="flex-1">
+                <h3 className="text-md font-bold text-gray-700 mb-2">
                   {category.title}
                 </h3>
-                <div className="text-gray-700 space-y-1 text-sm">
+                <ul className="text-gray-600 text-sm space-y-1">
                   {category.items.map((item, idx) => (
-                    <div key={idx}>{item}</div>
+                    <li key={idx}>{item}</li>
                   ))}
-                </div>
+                </ul>
               </div>
             </motion.div>
           );
