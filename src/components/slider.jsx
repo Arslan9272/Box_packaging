@@ -9,7 +9,7 @@ import "swiper/css/navigation";
 
 // Your images
 import slide_image_1 from "../assets/images/slider/slider_img1.jpg";
-import slide_image_2 from "../assets/images/slider/slider_img2.jpg";
+import slide_image_2 from "../assets/images/slider/slider_img2.webp";
 import slide_image_3 from "../assets/images/slider/slider_img3.jpg";
 import slide_image_4 from "../assets/images/slider/slider_img4.jpg";
 

@@ -1,5 +1,5 @@
-import React from "react";
-import { Link, useParams, useNavigate } from "react-router-dom";
+import React, { useRef } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 import ProductCard from "../components/ui/productCard";
 import categoryDataMap from "../config/categoryDataMap";
 import CustomQuoteForm from "../components/quote";
@@ -8,10 +8,9 @@ import SideImage from "../assets/images/pic.png";
 const CategoryPage = () => {
   const { type, category } = useParams();
   const navigate = useNavigate();
+  const quoteRef = useRef(null); // Reference to the quote form section
 
-  // Get category data from the map
   const categoryData = categoryDataMap[type]?.[category];
-
   const products = categoryData?.products || [];
   const backgroundImage = categoryData?.image || categoryData?.backgroundImage;
 
@@ -20,6 +19,10 @@ const CategoryPage = () => {
       .split("-")
       .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
       .join(" ");
+  };
+
+  const scrollToQuoteForm = () => {
+    quoteRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   return (
@@ -35,12 +38,12 @@ const CategoryPage = () => {
           <p className="text-yellow-100 text-lg md:text-xl mb-8 leading-relaxed">
             {categoryData?.description || "Category description goes here."}
           </p>
-          <Link
-            to="/custom-quote"
+          <button
+            onClick={scrollToQuoteForm}
             className="inline-block bg-white text-accent font-semibold px-6 py-3 rounded-lg shadow-lg hover:bg-gray-100 transition duration-300"
           >
             Submit a Custom Quote
-          </Link>
+          </button>
         </div>
       </section>
 
@@ -71,8 +74,12 @@ const CategoryPage = () => {
       )}
 
       {/* Quote Form Section */}
-      <div className="w-full bg-[#f9f9e5] min-h-screen px-6 py-10">
-        <div className="flex flex-row gap-8 max-w-screen-xl mx-auto ">
+      <div
+        ref={quoteRef}
+        className="w-full bg-[#f9f9e5] min-h-screen px-6 py-10" // scroll-mt-20
+        // className="w-full bg-[#f9f9e5] min-h-screen px-6 py-10"
+      >
+        <div className=" flex flex-row gap-8 max-w-screen-xl mx-auto ">
           <div className="bg-white p-6 rounded-lg shadow-md w-[70%] space-y-4">
             <CustomQuoteForm />
           </div>

@@ -5,23 +5,27 @@ const theme = {
   colors: {
     // Primary color theme: Beige // header+footer
     primary: {
-      light: "#EDE6E1", // very light beige
-      DEFAULT: "rgb(220, 201, 188)", // base beige
+      light: " #f6f6f6", // backgrounds
+      DEFAULT: "rgb(90, 175, 151)", // base beigergb(162, 7, 77)
       dark: "#B8AFA6", // muted/dark beige
     },
 
     // Accent color: text color
     dark: {
       light: "#4A4A4A",
-      DEFAULT: "rgb(50, 50, 50)",
+      DEFAULT: "rgb(24, 23, 23)",
       dark: "#1F1F1F",
     },
 
     // Optional accent: hover color / button color
     accent: {
-      DEFAULT: "rgb(94, 84, 84)",
-      dark: "rgb(43, 40, 40)", // dark gray
+      DEFAULT: "rgb(30, 79, 77)",
+      dark: "rgb(204, 124, 124)", // dark gray
       light: "rgb(110, 87, 87)",
+    },
+
+    nav_text: {
+      DEFAULT: "rgb(247, 241, 242)",
     },
     // Neutral grayscale (override as needed)
     neutral: {

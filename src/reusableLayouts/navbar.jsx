@@ -7,11 +7,11 @@ import {
   FaBars,
   FaTimes,
 } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import DropdownMenu from "../components/ui/dropdownMenu";
 import { Button } from "../components/ui/button";
-import BoxifyIcon from "../assets/images/boxify.png";
+import BoxifyIcon from "../assets/images/logo/logo.png";
 import { industryCategories } from "../data/uiDropdownItems/boxByIndustry";
 import { boxByStyleCategories } from "../data/uiDropdownItems/boxByStyle";
 import { boxByMaterialCategories } from "../data/uiDropdownItems/boxByMaterial";
@@ -19,13 +19,20 @@ import { boxByMaterialCategories } from "../data/uiDropdownItems/boxByMaterial";
 const Navbar = () => {
   const [isSticky, setIsSticky] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-
   useEffect(() => {
     const handleScroll = () => {
-      setIsSticky(window.scrollY > 80);
+      if (window.scrollY > 50) {
+        setIsSticky(true);
+      } else {
+        setIsSticky(false);
+      }
     };
+
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
@@ -33,10 +40,9 @@ const Navbar = () => {
   return (
     <div className="w-full relative z-50">
       {/* ✅ Top Contact Bar: Desktop */}
-      <div className="hidden md:flex bg-transparent w-full py-2 px-12 justify-between items-center z-40">
+      <div className="hidden md:flex bg-transparent w-full px-12 justify-between items-center z-40">
         <div className="flex items-center gap-2">
-          <img src={BoxifyIcon} alt="Logo" className="h-10" />
-          <span className="font-bold text-xl text-dark">PACKAGING</span>
+          <img src={BoxifyIcon} alt="Logo" className="h-20" />
         </div>
         <div className="flex items-center gap-6 text-sm">
           <div className="flex items-center gap-2 text-dark">
@@ -47,10 +53,14 @@ const Navbar = () => {
             <FaEnvelope className="text-accent" />
             <span>sales@oxopackaging.com</span>
           </div>
-          <FaWhatsapp className="text-green-500 text-xl" />
-          <Button className="bg-slate-700 text-primary px-4 py-1 rounded-md font-semibold">
+          {/* <FaWhatsapp className="text-green-500 text-xl" /> */}
+
+          <Link
+            to="/#custom-quote-section"
+            className="bg-[#7286A0] text-nav_text px-4 py-1 rounded-md font-semibold"
+          >
             Get Quote
-          </Button>
+          </Link>
         </div>
       </div>
 
@@ -93,37 +103,37 @@ const Navbar = () => {
           <nav className="hidden md:flex items-center gap-0 font-semibold text-sm ml-[2vw] sm:ml-[4vw] md:ml-[6vw] lg:ml-[8vw] relative z-50 text-dark h-10">
             <Link
               to="/"
-              className="h-full px-4 flex items-center hover:bg-accent hover:text-white transition-all border-none rounded-none"
+              className="h-full px-4 flex items-center hover:bg-accent text-nav_text hover:text-white font-bold transition-all border-none rounded-none"
             >
               Home
             </Link>
             <DropdownMenu
               title="Boxes by Industry"
               items={industryCategories}
-              className="ml-4"
+              className=" font-bold ml-4"
             />
 
             <DropdownMenu
               title="Boxes By Material"
               items={boxByMaterialCategories}
-              className="ml-4"
+              className="font-bold ml-4"
               isVerticalList={true}
             />
 
             <DropdownMenu
               title="Boxes By Style"
               items={boxByStyleCategories}
-              className="ml-4"
+              className="font-bold ml-4"
               isVerticalList={true}
             />
           </nav>
 
           {/* Right: Search & Portfolio */}
           <div className="hidden md:flex items-center gap-4 ml-auto mr-[2vw] sm:mr-[4vw] md:mr-[6vw] lg:mr-[8vw]">
-            <FaSearch className="text-dark cursor-pointer" />
+            {/* <FaSearch className="text-dark cursor-pointer" /> */}
             <Link
               to="/portfolio"
-              className="bg-accent text-white font-bold px-4 py-2  hover:text-accent-dark"
+              className="bg-accent text-nav_text font-bold px-4 py-2  hover:text-nav_text"
             >
               Portfolio
             </Link>

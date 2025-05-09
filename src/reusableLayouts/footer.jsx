@@ -1,4 +1,12 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faCcVisa,
+  faCcAmex,
+  faCcPaypal,
+  faCcMastercard,
+  faCcDiscover,
+} from "@fortawesome/free-brands-svg-icons";
 import {
   FaPhoneAlt,
   FaEnvelope,
@@ -12,18 +20,23 @@ import {
 import { Link } from "react-router-dom";
 import Input from "../components/ui/input";
 import Button from "../components/ui/button";
+import BoxifyIcon from "../assets/images/logo/logo-transparent.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-primary text-darkgrey py-10 px-6 md:px-20">
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
+    <footer className="text-nav_text font-sans">
+      {/* Top Section */}
+      <div className="bg-primary py-10 px-6 md:px-20 grid grid-cols-1 md:grid-cols-4 gap-10">
         {/* Logo and Subscription */}
+        <div className="flex items-center gap-4 mb-6">
+          <img src={BoxifyIcon} alt="Logo" className="h-19 w-auto" />
+        </div>
         <div>
-          <div className="flex items-center gap-2 mb-4">
-            <img src="/logo.png" alt="Logo" className="h-10" />
-            <span className="text-2xl font-bold">Packaging</span>
-          </div>
-          <p className="font-semibold mb-2">
+          <p className="font-semibold text-sm mb-2">
+            We partner with individuals and brands to create exceptional
+            experiences.
+          </p>
+          <p className="font-semibold text-sm mb-2">
             We partner with individuals and brands to create exceptional
             experiences.
           </p>
@@ -33,24 +46,12 @@ const Footer = () => {
           <p className="text-sm mb-2">
             Sign up for exclusive offers and updates!
           </p>
-          <div className="flex items-center">
+          <div className="flex">
             <Input
               placeholder="Your Email Address..."
-              className="text-black px-4 py-2
-               border border-[rgb(110,87,87)] 
-               rounded-l-md rounded-r-none 
-               shadow-inner
-               focus:outline-none 
-               focus:shadow-md focus:shadow-[rgb(110,87,87)]
-               focus:border-[rgb(94,84,84)]"
+              className="text-dark px-4 py-2 rounded-l-md rounded-r-none shadow-inner focus:outline-none"
             />
-            <Button
-              className="bg-[rgb(110,87,87)] text-black px-4 py-2 font-semibold 
-               border border-[rgb(110,87,87)] 
-               rounded-r-md rounded-l-none 
-               focus:outline-none 
-               hover:border-[rgb(94,84,84)]"
-            >
+            <Button className="bg-accent text-nav_text px-4 py-2 font-semibold rounded-r-md rounded-l-none focus:outline-none">
               Submit
             </Button>
           </div>
@@ -70,7 +71,7 @@ const Footer = () => {
               <Link to="/contactus">Contact Us</Link>
             </li>
             <li>
-              <Link to="/sitemap">Request a Quote</Link>
+              <Link to="/#custom-quote-section">Request a Quote</Link>
             </li>
             <li>
               <Link to="/privacy-policy">Privacy and Policy</Link>
@@ -82,7 +83,7 @@ const Footer = () => {
         </div>
 
         {/* Product Links */}
-        <div>
+        {/* <div>
           <h4 className="font-bold text-lg mb-4">Our Products</h4>
           <ul className="space-y-2 text-sm">
             <li>Soap Boxes</li>
@@ -92,9 +93,7 @@ const Footer = () => {
             <li>Mylar Bags</li>
             <li>Gable Boxes</li>
           </ul>
-          {/* <p className="font-semibold mb-2">PakFactory is committed to delivering
-          manufacturing excellence.</p> */}
-        </div>
+        </div> */}
 
         {/* Contact Info */}
         <div>
@@ -118,30 +117,35 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Social & Copyright */}
-      <div className="mt-10 border-t border-gray-700 pt-6 flex flex-col md:flex-row items-center justify-between text-sm">
-        <div className="flex items-center gap-4 mb-4 md:mb-0">
-          <span>Connect with Us:</span>
-          <FaFacebook className="hover:text-accent cursor-pointer" />
-          <FaTwitter className="hover:text-accent cursor-pointer" />
-          <FaYoutube className="hover:text-accent cursor-pointer" />
-          <FaPinterest className="hover:text-accent cursor-pointer" />
-          <FaInstagram className="hover:text-accent cursor-pointer" />
+      {/* Bottom Section */}
+      <div className=" text-dark py-8 px-6 md:px-20 ">
+        <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row items-center justify-between text-sm">
+          <div className="flex items-center gap-4 mb-4 md:mb-0">
+            <span className="font-semibold">Connect with Us:</span>
+            <FaFacebook className="hover:text-primary cursor-pointer" />
+            <FaTwitter className="hover:text-primary cursor-pointer" />
+            <FaYoutube className="hover:text-primary cursor-pointer" />
+            <FaPinterest className="hover:text-primary cursor-pointer" />
+            <FaInstagram className="hover:text-primary cursor-pointer" />
+          </div>
+          <div className="flex items-center gap-4 flex-wrap justify-center md:justify-start">
+            <div className="text-xs font-semibold">
+              SSL 100% Secure Transactions:
+            </div>
+            <div className="flex gap-4 text-xl">
+              <FontAwesomeIcon icon={faCcVisa} />
+              <FontAwesomeIcon icon={faCcAmex} />
+              <FontAwesomeIcon icon={faCcPaypal} />
+              <FontAwesomeIcon icon={faCcMastercard} />
+              <FontAwesomeIcon icon={faCcDiscover} />
+            </div>
+          </div>
         </div>
-        <div className="flex items-center gap-6">
-          <div className="text-xs">SSL 100% Secure Transactions:</div>
-          <img src="/visa.png" alt="Visa" className="h-5" />
-          <img src="/amex.png" alt="Amex" className="h-5" />
-          <img src="/discover.png" alt="Discover" className="h-5" />
-          <img src="/paypal.png" alt="PayPal" className="h-5" />
-          <img src="/bank.png" alt="Bank" className="h-5" />
-        </div>
-      </div>
 
-      {/* Bottom Note */}
-      <div className="mt-4 text-center text-xs text-gray-400">
-        Copyright 2025. www.oxopackaging.com Project By Just Hub LLC. All rights
-        reserved.
+        <div className="mt-4 text-center text-xs text-dark font-medium">
+          © 2025 www.oxopackaging.com — Project By Just Hub LLC. All rights
+          reserved.
+        </div>
       </div>
     </footer>
   );

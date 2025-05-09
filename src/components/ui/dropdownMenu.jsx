@@ -21,25 +21,32 @@ const DropdownMenu = ({ title, items, className = "" }) => {
   const isFirstDropdown = title === "Boxes by Industry"; // Check if it's the first dropdown
 
   return (
-    <div ref={menuRef} className={`relative flex h-full items-center ${className}`}>
+    <div
+      ref={menuRef}
+      className={`relative flex h-full items-center text-nav_text ${className}`}
+    >
       <button
         onClick={toggleDropdown}
-        className={`h-full px-4 flex items-center gap-1 transition-all text-dark ${
-          isOpen ? "bg-accent text-white" : "hover:bg-accent hover:text-white"
+        className={`h-full px-4 flex items-center gap-1 transition-all ${
+          isOpen ? "bg-accent text-dark" : "hover:bg-accent hover:nav_text"
         } rounded-none border-none focus:outline-none`}
         style={{ borderRadius: 0, border: "none" }}
       >
         {title}
         <ChevronDown
           size={16}
-          className={`transition-transform duration-200 ${isOpen ? "rotate-180 text-white" : "text-accent"}`}
+          className={`transition-transform duration-200 ${
+            isOpen ? "rotate-180 text-white" : "text-accent"
+          }`}
         />
       </button>
 
       {isOpen && (
         <div
           className={`absolute left-0 top-full bg-white shadow-lg z-50 p-6 gap-4 ${
-            isFirstDropdown ? "grid grid-cols-2 lg:grid-cols-3 min-w-[600px]" : "flex flex-col min-w-[200px]"
+            isFirstDropdown
+              ? "grid grid-cols-2 lg:grid-cols-3 min-w-[600px]"
+              : "flex flex-col min-w-[200px]"
           }`}
         >
           {items.map((item, index) => (
@@ -49,7 +56,23 @@ const DropdownMenu = ({ title, items, className = "" }) => {
               onClick={() => setIsOpen(false)}
               className="flex items-center gap-2 text-sm text-gray-800 hover:text-accent transition"
             >
-              <span className="text-lg">{item.icon}</span>
+              {typeof item.icon === "string" &&
+              item.icon.startsWith("data:") ? (
+                <img
+                  src={item.icon}
+                  alt={item.label}
+                  className="w-6 h-6 object-contain"
+                />
+              ) : typeof item.icon === "string" && item.icon.includes("/") ? (
+                <img
+                  src={item.icon}
+                  alt={item.label}
+                  className="w-6 h-6 object-contain"
+                />
+              ) : (
+                <span className="text-lg">{item.icon}</span>
+              )}
+
               {item.label}
             </Link>
           ))}

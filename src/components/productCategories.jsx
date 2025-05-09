@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { cardAnimations } from "../config/motion";
-import box from "../assets/images/bg_box.png";
-import paperBox from "../assets/images/bg_paperbox.png";
-import paperbag from "../assets/images/bg_paperbag.png";
-import giftbox from "../assets/images/bg_giftbox.png";
-import anticollision from "../assets/images/anticollisionbox.png";
-import custombox from "../assets/images/custome.png";
+import box from "../assets/images/home/bg_box.png";
+import paperBox from "../assets/images/home/bg_paperbox.png";
+import paperbag from "../assets/images/home/bg_paperbag.png";
+import giftbox from "../assets/images/home/bg_giftbox.png";
+import anticollision from "../assets/images/home/anticollisionbox.png";
+import custombox from "../assets/images//home/custome.png";
 
 const categories = [
   {

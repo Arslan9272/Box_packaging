@@ -1,61 +1,5 @@
 import apparelBoxData from "../data/industry/apparelBoxData";
-// const categoryDataMap = {
-//   industry: {
-//     "apparel-boxes": apparelBoxData,
-//     "auto-parts": null,
-//     "bakery-boxes": null,
-//     "bottle-boxes": null,
-//     "candle-boxes": null,
-//     "cbd-boxes": null,
-//     "cereal-boxes": null,
-//     "chocolate-boxes": null,
-//     "christmas-boxes": null,
-//     "cigarette-boxes": null,
-//     "cosmetic-boxes": null,
-//     "electronics-boxes": null,
-//     "food-boxes": null, // e.g., foodBoxData
-//     "gift-boxes": null,
-//     "hardware-boxes": null,
-//     "health-boxes": null,
-//     "hemp-boxes": null,
-//     "jewelry-boxes": null,
-//     "phrma-boxes": null,
-//     "pizza-boxes": null,
-//     "pre-roll-boxes": null,
-//     "retail-boxes": null,
-//     "shipping-boxes": null,
-//     "soap-boxes": null,
-//     "sports-boxes": null,
-//     "stationery-boxes": null,
-//     "vape-boxes": null,
-//   },
-//   style: {
-//     "custom-mylar-bags": apparelBoxData,
-//     "custom-tote-bag": null,
-//     "display-boxes": null,
-//     "gable-boxes": null,
-//     "hang-tags": null,
-//     "labels-stickers": null,
-//     "mailer-boxes": null,
-//     "paper-bags": null,
-//     "pillow-boxes": null,
-//     "spouted-pouches": null,
-//     "trays-and-sleeves": null,
-//     "tuck-boxes": null,
-//     "window-packaging-boxes": null,
-//   },
-//   material: {
-//     "cardboard-boxes": apparelBoxData,
-//     "corrugated-boxes": null,
-//     "rigid-boxes": null,
-//     "kraft-boxes": null,
-//     "tin-packaging": null,
-//     "poly-bags": null,
-//   },
-// };
-
-// export default categoryDataMap;
-
+import autoBoxData from "../data/industry/autoBoxData";
 import defaultBackground from "../assets/images/background_3.jpg";
 
 const categoryDataMap = {
@@ -72,7 +16,7 @@ const categoryDataMap = {
       heading: "Protective Auto Parts Packaging",
       description: "Strong and durable boxes for automotive components.",
       image: defaultBackground,
-      products: null,
+      products: autoBoxData,
     },
     "bakery-boxes": {
       heading: "Fresh Packaging for Freshly Baked Goods",
