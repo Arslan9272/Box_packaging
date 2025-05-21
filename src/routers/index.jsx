@@ -6,6 +6,7 @@ import ProductDetail from "../pages/ProductDetail";
 import ContactUs from "../pages/Contact";
 import AboutUs from "../pages/AboutUs";
 import Portfolio from "../pages/Portfolio";
+import ThankYouPage from "../pages/Thankyou";
 import ScrollToTop from "./scrollTop";
 import ScrollToHash from "./scrollToHash";
 
@@ -21,11 +22,13 @@ const AppRouter = () => {
             <Home key={window.location.pathname + window.location.hash} />
           }
         />
+        {/* <Route path="/" element={<Home />} /> */}
         <Route path="/category/:type/:category" element={<CategoryPage />} />
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/product/:productId" element={<ProductDetail />} />
         <Route path="/contactus" element={<ContactUs />} />
         <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/thank-you" element={<ThankYouPage />} />
       </Routes>
     </div>
   );

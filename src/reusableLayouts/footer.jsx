@@ -26,94 +26,86 @@ const Footer = () => {
   return (
     <footer className="text-nav_text font-sans">
       {/* Top Section */}
-      <div className="bg-primary py-10 px-6 md:px-20 grid grid-cols-1 md:grid-cols-4 gap-10">
-        {/* Logo and Subscription */}
-        <div className="flex items-center gap-4 mb-6">
-          <img src={BoxifyIcon} alt="Logo" className="h-19 w-auto" />
+      <div className="bg-primary py-10  px-6 md:px-20 flex flex-col md:flex-row gap-10">
+        {/* Left: Logo (30%) */}
+        <div className="w-full md:w-[20%] flex justify-center md:justify-start items-start">
+          <img src={BoxifyIcon} alt="Logo" className="h-70 w-auto" />
         </div>
-        <div>
-          <p className="font-semibold text-sm mb-2">
-            We partner with individuals and brands to create exceptional
-            experiences.
-          </p>
-          <p className="font-semibold text-sm mb-2">
-            We partner with individuals and brands to create exceptional
-            experiences.
-          </p>
-          <p className="text-sm mb-4">
-            Let’s achieve something remarkable together.
-          </p>
-          <p className="text-sm mb-2">
-            Sign up for exclusive offers and updates!
-          </p>
-          <div className="flex">
-            <Input
-              placeholder="Your Email Address..."
-              className="text-dark px-4 py-2 rounded-l-md rounded-r-none shadow-inner focus:outline-none"
-            />
-            <Button className="bg-accent text-nav_text px-4 py-2 font-semibold rounded-r-md rounded-l-none focus:outline-none">
-              Submit
-            </Button>
+
+        {/* Right: Content (70%) */}
+        <div className="w-full md:w-[80%] grid grid-cols-1 md:grid-cols-6 gap-8 mt-8">
+          {/* Subscription Section */}
+          <div className="md:col-span-3   mt-8">
+            <p className="font-semibold text-sm mb-2">
+              We partner with individuals and brands to create exceptional
+              experiences.
+            </p>
+            <p className="font-semibold text-sm mb-2">
+              We partner with individuals and brands to create exceptional
+              experiences.
+            </p>
+            <p className="text-sm mb-4">
+              Let’s achieve something remarkable together.
+            </p>
+            <p className="text-sm mb-2">
+              Sign up for exclusive offers and updates!
+            </p>
+            <div className="flex mt-2">
+              <Input
+                placeholder="Your Email Address..."
+                className="text-dark px-4 py-2 rounded-l-md rounded-r-none shadow-inner focus:outline-none w-full"
+              />
+              <Button className="bg-accent text-nav_text px-4 py-2 font-semibold rounded-r-md rounded-l-none focus:outline-none">
+                Submit
+              </Button>
+            </div>
           </div>
-        </div>
 
-        {/* Info Links */}
-        <div>
-          <h4 className="font-bold text-lg mb-4">Need Help?</h4>
-          <ul className="space-y-2 text-sm">
-            <li>
-              <Link to="/portfolio">Portfolio</Link>
-            </li>
-            <li>
-              <Link to="/about-us">About Us</Link>
-            </li>
-            <li>
-              <Link to="/contactus">Contact Us</Link>
-            </li>
-            <li>
-              <Link to="/#custom-quote-section">Request a Quote</Link>
-            </li>
-            <li>
-              <Link to="/privacy-policy">Privacy and Policy</Link>
-            </li>
-            <li>
-              <Link to="/terms-and-conditions">Terms and Conditions</Link>
-            </li>
-          </ul>
-        </div>
+          {/* Info Links */}
+          <div className="md:col-span-1">
+            <h4 className="font-bold text-lg mb-4">Need Help?</h4>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link to="/portfolio">Portfolio</Link>
+              </li>
+              <li>
+                <Link to="/about-us">About Us</Link>
+              </li>
+              <li>
+                <Link to="/contactus">Contact Us</Link>
+              </li>
+              <li>
+                <Link to="/#custom-quote-section">Request a Quote</Link>
+              </li>
+              <li>
+                <Link to="/privacy-policy">Privacy and Policy</Link>
+              </li>
+              <li>
+                <Link to="/terms-and-conditions">Terms and Conditions</Link>
+              </li>
+            </ul>
+          </div>
 
-        {/* Product Links */}
-        {/* <div>
-          <h4 className="font-bold text-lg mb-4">Our Products</h4>
-          <ul className="space-y-2 text-sm">
-            <li>Soap Boxes</li>
-            <li>Pillow Boxes</li>
-            <li>Rigid Boxes</li>
-            <li>Kraft Boxes</li>
-            <li>Mylar Bags</li>
-            <li>Gable Boxes</li>
-          </ul>
-        </div> */}
-
-        {/* Contact Info */}
-        <div>
-          <h4 className="font-bold text-lg mb-4">CONTACT US</h4>
-          <ul className="space-y-3 text-sm">
-            <li className="flex items-center gap-2">
-              <FaPhoneAlt className="text-accent" /> (510) 500-9533
-            </li>
-            <li className="flex items-center gap-2">
-              <FaEnvelope className="text-accent" /> sales@oxopackaging.com
-            </li>
-            <li className="flex items-center gap-2">
-              <FaMapMarkerAlt className="text-accent" />
-              39899 Balentine Drive Suite 200, Newark, CA 94560
-            </li>
-            <li className="flex items-center gap-2">
-              <FaMapMarkerAlt className="text-accent" />
-              3400 N Central Expy Ste #110-227, Richardson, TX 75080
-            </li>
-          </ul>
+          {/* Contact Info */}
+          <div className="md:col-span-2">
+            <h4 className="font-bold text-lg mb-4">Contact Us</h4>
+            <ul className="space-y-3 text-sm">
+              <li className="flex items-center gap-2">
+                <FaPhoneAlt className="text-accent" /> (510) 500-9533
+              </li>
+              <li className="flex items-center gap-2">
+                <FaEnvelope className="text-accent" /> sales@oxopackaging.com
+              </li>
+              <li className="flex items-center gap-2">
+                <FaMapMarkerAlt className="text-accent" />
+                39899 Balentine Drive Suite 200, Newark, CA 94560
+              </li>
+              <li className="flex items-center gap-2">
+                <FaMapMarkerAlt className="text-accent" />
+                3400 N Central Expy Ste #110-227, Richardson, TX 75080
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
 
@@ -143,8 +135,7 @@ const Footer = () => {
         </div>
 
         <div className="mt-4 text-center text-xs text-dark font-medium">
-          © 2025 www.oxopackaging.com — Project By Just Hub LLC. All rights
-          reserved.
+          © 2025 www.customboxes360.com — All rights reserved.
         </div>
       </div>
     </footer>

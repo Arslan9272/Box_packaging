@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ChevronDown } from "lucide-react";
+import Button from "./button";
 
 const DropdownMenu = ({ title, items, className = "" }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,10 +26,10 @@ const DropdownMenu = ({ title, items, className = "" }) => {
       ref={menuRef}
       className={`relative flex h-full items-center text-nav_text ${className}`}
     >
-      <button
+      <Button
         onClick={toggleDropdown}
         className={`h-full px-4 flex items-center gap-1 transition-all ${
-          isOpen ? "bg-accent text-dark" : "hover:bg-accent hover:nav_text"
+          isOpen ? "bg-accent text-nav_text" : "hover:bg-accent hover:nav_text"
         } rounded-none border-none focus:outline-none`}
         style={{ borderRadius: 0, border: "none" }}
       >
@@ -39,7 +40,7 @@ const DropdownMenu = ({ title, items, className = "" }) => {
             isOpen ? "rotate-180 text-white" : "text-accent"
           }`}
         />
-      </button>
+      </Button>
 
       {isOpen && (
         <div
