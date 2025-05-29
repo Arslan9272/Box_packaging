@@ -6,7 +6,7 @@ const theme = {
     // Primary color theme: Beige // header+footer
     primary: {
       light: " #f6f6f6", // backgrounds
-      DEFAULT: "rgb(90, 175, 151)", // base beigergb(162, 7, 77)
+      DEFAULT: "#4c5b5c", // "rgb(90, 175, 151)", // base beigergb(162, 7, 77)
       dark: "#B8AFA6", // muted/dark beige
     },
 
@@ -19,7 +19,7 @@ const theme = {
 
     // Optional accent: hover color / button color
     accent: {
-      DEFAULT: "rgb(30, 79, 77)",
+      DEFAULT: "#C6CCB2",
       dark: "rgb(204, 124, 124)", // dark gray
       light: "rgb(110, 87, 87)",
     },

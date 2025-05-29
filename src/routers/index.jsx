@@ -9,6 +9,7 @@ import Portfolio from "../pages/Portfolio";
 import ThankYouPage from "../pages/Thankyou";
 import ScrollToTop from "./scrollTop";
 import ScrollToHash from "./scrollToHash";
+import ChatWidget from "../components/chatWidget";
 
 const AppRouter = () => {
   return (
@@ -29,6 +30,7 @@ const AppRouter = () => {
         <Route path="/contactus" element={<ContactUs />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/thank-you" element={<ThankYouPage />} />
+        <Route path="/chatWidget" element={<ChatWidget />} />
       </Routes>
     </div>
   );

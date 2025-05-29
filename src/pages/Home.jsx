@@ -5,7 +5,7 @@ import CustomQuoteForm from "../components/quote";
 import ProductCategories from "../components/productCategories";
 import ParallaxSection from "../components/parallexSection";
 import newParallaxBg from "../assets/images/1.jpg";
-import bgImage from "../assets/images/slider/slider_img4.jpg";
+import bgImage from "../assets/images/slider/banner.png";
 // import newParallaxBg1 from "../assets/images/image.png";
 // import CardSlider from "../components/cardSlider";
 import SideImage from "../assets/images/side_image.jpg";
@@ -114,11 +114,11 @@ const Home = () => {
         <img
           src={bgImage}
           alt="Warehouse Background"
-          className="absolute inset-0 h-full w-full object-cover filter brightness-75 blur-sm"
+          className="absolute h-full w-full object-cover"
         />
 
         {/* Overlay Text */}
-        <div className="relative z-10 flex h-full items-center justify-center">
+        {/* <div className="relative z-10 flex h-full items-center justify-center">
           <div className="text-center px-4">
             <h2 className="text-10xl md:text-8xl font-light text-white">
               From Die Cut to Delivery.
@@ -127,7 +127,7 @@ const Home = () => {
               The Full Package.
             </h1>
           </div>
-        </div>
+        </div> */}
       </div>
 
       <ProductCategories />

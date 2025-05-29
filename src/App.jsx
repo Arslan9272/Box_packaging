@@ -5,12 +5,13 @@ import "react-toastify/dist/ReactToastify.css";
 import AppRouter from "./routers";
 import Layout from "./reusableLayouts/layout";
 import ChatWrapper from "./pages/ChatWrapper";
+import AppSessionHandler from "./components/appSessionHandler";
 
 const App = () => {
   return (
     <>
       <ToastContainer position="top-right" autoClose={3000} />
-      {/* <Toaster position="top-right" reverseOrder={false} /> */}
+      <AppSessionHandler />
       <ChatWrapper />
       <Layout>
         <AppRouter />

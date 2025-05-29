@@ -9,9 +9,12 @@ const ChatWrapper = () => {
 
   const handleToggleChat = () => {
     if (isFormOpen || isChatOpen) {
+      // User is closing the chat/form — perform logout
+      localStorage.removeItem("access_token"); // Clear token from storage
       setIsFormOpen(false);
       setIsChatOpen(false);
     } else {
+      // User is opening the chat form
       setIsFormOpen(true);
     }
   };
