@@ -3,6 +3,7 @@ import Layout from "../reusableLayouts/layout"; // make sure this path is correc
 import Input from "../components/ui/input";
 import Button from "../components/ui/button";
 import Textarea from "../components/ui/textArea";
+import Label from "../components/ui/label";
 import CardSlider from "../components/cardSlider";
 
 const ContactUs = () => {
@@ -85,35 +86,39 @@ const ContactUs = () => {
         <div>
           <form className="space-y-4" onSubmit={handleSubmit}>
             <div>
-              <label className="text-sm font-medium">Name*</label>
+              <Label label="Name*" error={errors.name} className="text-sm font-medium">
               <Input name="name" value={formData.name} onChange={handleChange} placeholder="Your name" />
-              {errors.name && <p className="text-red-500 text-xs">{errors.name}</p>}
+              </Label>
             </div>
             <div>
-              <label className="text-sm font-medium">E-mail*</label>
+            <Label label="Email*" error={errors.email} className="text-sm font-medium">
               <Input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="Your email" />
-              {errors.email && <p className="text-red-500 text-xs">{errors.email}</p>}
+              </Label>
             </div>
             <div>
-              <label className="text-sm font-medium">Phone*</label>
+            <Label label="Phone*" error={errors.phone} className="text-sm font-medium"> 
               <Input name="phone" value={formData.phone} onChange={handleChange} placeholder="Phone number" />
-              {errors.phone && <p className="text-red-500 text-xs">{errors.phone}</p>}
+              </Label>
             </div>
             <div>
-              <label className="text-sm font-medium">Location</label>
+            <Label label="Location" error="" className="text-sm font-medium">
               <Input name="location" value={formData.location} onChange={handleChange} placeholder="Location" />
+              </Label>
             </div>
             <div>
-              <label className="text-sm font-medium">Company</label>
+            <Label label="Company" error="" className="text-sm font-medium">
               <Input name="company" value={formData.company} onChange={handleChange} placeholder="Company" />
+              </Label>
             </div>
             <div>
-              <label className="text-sm font-medium">Website</label>
+            <Label label="Website" error="" className="text-sm font-medium">
               <Input name="website" value={formData.website} onChange={handleChange} placeholder="Website" />
+              </Label>
             </div>
             <div>
-              <label className="text-sm font-medium">Message</label>
+            <Label label="Message" error="" className="text-sm font-medium">
               <Textarea name="message" value={formData.message} onChange={handleChange} placeholder="Write a short message" className="resize-none" />
+              </Label>
             </div>
 
             <div className="flex items-start gap-2">
@@ -131,7 +136,7 @@ const ContactUs = () => {
         </div>
       </div>
 
-      <CardSlider/>
+      {/* <CardSlider/> */}
       </div>
   );
 }
